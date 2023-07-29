@@ -10,10 +10,8 @@
   --color-main: 194;
 
   --bg-app: hsl(240, 5%, 7%);
-  --bg-timer-buttons: hsla(var(--color-main), 100%, 63%, 0.129);
-
-  --c-time: hsl(0, 0%, 100%);
-  --c-buttons: hsl(var(--color-main), 100%, 63%);
+  --primary-color: hsl(240, 40%, 98%);
+  --bg-timer-buttons: hsl(0, 0%, 14%);
 }
 
 body {
@@ -32,46 +30,48 @@ main {
   flex-direction: column;
   justify-items: center;
   gap: 16rem;
-
-  max-width: 230rem;
 }
 
 .time {
   display: flex;
   justify-content: center;
 
-  color: var(--c-time);
-  font-size: 88rem;
+  color: var(--primary-color);
+  font-size: 96rem;
   font-weight: 700;
+}
+
+.controls {
+  background-color: var(--bg-timer-buttons);
+
+  padding: 22rem 40rem;
+  border-radius: 9999rem;
+}
+
+.controls #buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16rem;
+
+  list-style: none;
 }
 
 button {
   background-color: transparent;
+  cursor: pointer;
   border: none;
 }
 
-#btn-play svg path,
-#btn-pause svg path,
-#btn-mute svg path {
-  fill: var(--c-buttons);
-}
-
-.controls {
-  border-radius: 100px;
-  background-color: var(--bg-timer-buttons);
-
-  display: flex;
-  gap: 32rem;
-  justify-content: center;
-
-  padding: 22rem 40rem;
-}
-
-.btn-audio {
+.theme {
   position: absolute;
-  bottom: 32rem;
-  right: 40rem;
+  top: 32rem;
+  right: 32rem;
 }
+
+
+
+/* Classes utilitárias */
 
 .hide {
   display: none;
