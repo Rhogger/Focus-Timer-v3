@@ -1,4 +1,4 @@
-export default function Controls({ btnPlay, btnPause, btnStop, btnTimeEdit }) {
+export default function Controls({ btnPlay, btnPause, btnStop, btnSetTime }) {
   function toggleBetweenPlayOrPause() {
     btnPlay.classList.toggle('hide')
     btnPause.classList.toggle('hide')
@@ -7,7 +7,7 @@ export default function Controls({ btnPlay, btnPause, btnStop, btnTimeEdit }) {
 
   function toggleBetweenStopOrTimeEdit() {
     btnStop.classList.toggle('hide')
-    btnTimeEdit.classList.toggle('hide')
+    btnSetTime.classList.toggle('hide')
   }
 
   return {

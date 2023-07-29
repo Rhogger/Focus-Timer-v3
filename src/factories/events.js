@@ -2,11 +2,11 @@ import {
   btnPlay,
   btnPause,
   btnStop,
-  btnTimeEdit,
-  btnMute,
-  btnUnmute
+  btnSetTime,
+  btnSoundOff,
+  btnSoundOn
 } from '../modules/elements.js'
-import { play, pause } from '../script.js'
+import { play, pause } from '../../script.js'
 
 
 export default function Events({
@@ -31,7 +31,7 @@ export default function Events({
     sounds.buttonPress()
   })
 
-  btnTimeEdit.addEventListener('click', () => {
+  btnSetTime.addEventListener('click', () => {
     Time.minutes = Number(prompt('Quantos minutos deseja contar?'))
     Time.minutes = Math.trunc(Number(Time.minutes))
 
@@ -44,12 +44,12 @@ export default function Events({
     timer.updateDisplay(Time.minutes, 0)
   })
 
-  btnMute.addEventListener('click', () => {
+  btnSoundOff.addEventListener('click', () => {
     sounds.toggleBetweenMuteOrUnmute()
-    sounds.backgroundMuted()
+    sounds.backgroundSoundOn()
   })
-  btnUnmute.addEventListener('click', () => {
+  btnSoundOn.addEventListener('click', () => {
     sounds.toggleBetweenMuteOrUnmute()
-    sounds.backgroundUnmuted()
+    sounds.backgroundSoundOff()
   })
 }

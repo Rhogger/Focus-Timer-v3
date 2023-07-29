@@ -2,16 +2,16 @@ import {
   btnPlay,
   btnPause,
   btnStop,
-  btnTimeEdit,
-  btnMute,
-  btnUnmute,
+  btnSetTime,
+  btnSoundOff,
+  btnSoundOn,
   minutesDisplay,
   secondsDisplay
-} from './modules/elements.js'
-import Events from './factories/events.js'
-import Sounds from './factories/sounds.js'
-import Controls from './factories/controls.js'
-import Timer from './factories/timer.js'
+} from './src/modules/elements.js'
+import Events from './src/factories/events.js'
+import Sounds from './src/factories/sounds.js'
+import Controls from './src/factories/controls.js'
+import Timer from './src/factories/timer.js'
 
 const Time = {
   minutes: '05',
@@ -20,15 +20,15 @@ const Time = {
 }
 
 const sounds = Sounds({
-  btnMute,
-  btnUnmute
+  btnSoundOff,
+  btnSoundOn
 })
 
 const controls = Controls({
   btnPlay,
   btnPause,
   btnStop,
-  btnTimeEdit
+  btnSetTime
 })
 
 const timer = Timer({

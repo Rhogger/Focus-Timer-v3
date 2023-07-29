@@ -1,4 +1,4 @@
-export default function Sounds({ btnMute, btnUnmute }) {
+export default function Sounds({ btnSoundOff, btnSoundOn }) {
   const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
   const finishTimerAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
   const backgroundAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/bg-audio.mp3?raw=true")
@@ -13,24 +13,24 @@ export default function Sounds({ btnMute, btnUnmute }) {
     finishTimerAudio.play()
   }
 
-  function backgroundUnmuted() {
+  function backgroundSoundOn() {
     backgroundAudio.play()
   }
 
-  function backgroundMuted() {
+  function backgroundSoundOff() {
     backgroundAudio.pause()
   }
 
   function toggleBetweenMuteOrUnmute() {
-    btnMute.classList.toggle('hide')
-    btnUnmute.classList.toggle('hide')
+    btnSoundOff.classList.toggle('hide')
+    btnSoundOn.classList.toggle('hide')
   }
 
   return {
     toggleBetweenMuteOrUnmute,
     buttonPress,
     finishTimer,
-    backgroundUnmuted,
-    backgroundMuted
+    backgroundSoundOn,
+    backgroundSoundOff
   }
 }
