@@ -1,45 +1,46 @@
 import {
   appState,
-  btnSoundOff,
-  btnSoundOn,
+  controls,
+  theme,
   minutesDisplay,
   secondsDisplay
 } from './src/modules/elements.js'
+import state from './src/modules/state.js'
 import Events from './src/factories/events.js'
 import Sounds from './src/factories/sounds.js'
 import Timer from './src/factories/timer.js'
+import Actions from './src/modules/actions.js'
 
-const Time = {
-  minutes: '05',
-  seconds: '00',
+let darkMode = true
+
+export const time = {
+  minutes: 25,
+  seconds: 0,
   idCountdown: null,
 }
 
-const sounds = Sounds({
-  btnSoundOff,
-  btnSoundOn
-})
+export const sounds = Sounds()
 
-const timer = Timer({
+export const timer = Timer({
   appState,
-  Time,
+  time,
   minutesDisplay,
   secondsDisplay,
   sounds
 })
 
-Events({
-  Time,
+const actions = Actions({
+  state,
   sounds,
-  timer
+  timer,
+  time,
+  appState,
+  darkMode
 })
 
-export function play() {
-  appState.classList.add('running')
-  timer.countdown()
-}
+Events({
+  controls,
+  actions,
+  theme
+})
 
-export function pause() {
-  appState.classList.remove('running')
-  clearTimeout(Time.idCountdown)
-}

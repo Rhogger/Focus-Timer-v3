@@ -23,7 +23,7 @@
 
 <body>
   <div class="theme">
-    <button class="toggle-mode">
+    <button data-action="toggleTheme" class="toggle-mode">
       <span class="sr-only">Ativar/Desativar Light Mode</span>
       <i class="ph-bold ph-sun" id="btn-dark-theme"></i>
       <i class="ph-bold ph-moon" id="btn-light-theme"></i>
@@ -40,32 +40,32 @@
     <section class="controls">
       <ul id="buttons">
         <li id="btn-play">
-          <button class="ph ph-play-circle">
+          <button data-action="toggleRunning" class="ph ph-play-circle">
             <span class="sr-only">Iniciar contador</span>
           </button>
         </li>
         <li id="btn-pause">
-          <button class="ph ph-pause-circle">
+          <button data-action="toggleRunning" class="ph ph-pause-circle">
             <span class="sr-only">Pausar contador</span>
           </button>
         </li>
         <li id="btn-set-time">
-          <button class="ph ph-timer secondary">
+          <button data-action="setTimer" class="ph ph-timer secondary">
             <span class="sr-only">Alterar contador</span>
           </button>
         </li>
         <li id="btn-stop">
-          <button class="ph ph-stop-circle secondary">
+          <button data-action="resetTimer" class="ph ph-stop-circle secondary">
             <span class="sr-only">Parar o contador</span>
           </button>
         </li>
         <li id="btn-sound-off">
-          <button class="ph ph-speaker-none secondary">
+          <button data-action="toggleMusic" class="ph ph-speaker-none secondary">
             <span class="sr-only">Ativar som ambiente</span>
           </button>
         </li>
         <li id="btn-sound-on">
-          <button class="ph ph-speaker-high">
+          <button data-action="toggleMusic" class="ph ph-speaker-high">
             <span class="sr-only">Desativar som ambiente</span>
           </button>
         </li>

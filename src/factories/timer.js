@@ -1,9 +1,9 @@
-export default function Timer({ appState, Time, minutesDisplay, secondsDisplay, sounds }) {
+export default function Timer({ appState, time, minutesDisplay, secondsDisplay, sounds }) {
   function countdown() {
     let minutes
     let seconds
 
-    Time.idCountdown = setTimeout(function () {
+    time.idCountdown = setTimeout(function () {
       minutes = Number(minutesDisplay.textContent)
       seconds = Number(secondsDisplay.textContent)
 
@@ -37,7 +37,7 @@ export default function Timer({ appState, Time, minutesDisplay, secondsDisplay, 
   }
 
   function resetDisplayCountdown() {
-    updateDisplay(Time.minutes, Time.seconds)
+    updateDisplay(time.minutes, time.seconds)
   }
 
   function updateDisplay(minutes, seconds) {
@@ -51,13 +51,13 @@ export default function Timer({ appState, Time, minutesDisplay, secondsDisplay, 
   }
 
   function editTimer() {
-    clearTimeout(Time.idCountdown)
+    clearTimeout(time.idCountdown)
 
     alert('Defina um tempo para o timer.')
 
     minutes = prompt('Quantos minutos deseja contar?').padStart(2, '0')
 
-    Time.minutes = minutes
+    time.minutes = minutes
 
     seconds = 1
   }
