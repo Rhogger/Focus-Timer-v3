@@ -1,5 +1,5 @@
 import state from "./state.js"
-import { sounds, timer, time, darkMode } from "../../script.js"
+import { sounds, timer, time } from "../../script.js"
 import { appState, minutesDisplay } from "./elements.js"
 
 function toggleRunning() {

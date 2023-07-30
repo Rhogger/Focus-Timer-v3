@@ -1,5 +1,5 @@
 import * as actions from './actions.js'
-import * as state from './state.js'
+import state from "./state.js"
 import { appState, controls, minutesDisplay, theme } from './elements.js'
 import { time, timer } from '../../script.js'
 
@@ -14,13 +14,12 @@ export function registerControls() {
 
 
   theme.addEventListener('click', (event) => {
-    state.isDarkTheme = appState.classList.toggle('light')
-
-    const mode = darkMode ? 'light' : 'dark'
+    const mode = state.isDarkTheme ? 'light' : 'dark'
 
     event.currentTarget.querySelector('span').textContent = `${mode} mode ativado`
 
-    darkMode = !darkMode
+    state.isDarkTheme = !state.isDarkTheme
+    appState.classList.toggle('light')
   })
 
 

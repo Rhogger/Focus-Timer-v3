@@ -8,8 +8,6 @@ import * as events from './src/modules/events.js'
 import Sounds from './src/factories/sounds.js'
 import Timer from './src/factories/timer.js'
 
-export let darkMode = true
-
 export const time = {
   minutes: 25,
   seconds: 0,

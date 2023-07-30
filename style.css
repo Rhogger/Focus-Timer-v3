@@ -58,6 +58,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-items: center;
+  align-items: center;
   gap: 16rem;
 }
 
@@ -77,6 +78,8 @@ main {
 
   padding: 22rem 40rem;
   border-radius: 9999rem;
+
+  max-width: 304rem;
 }
 
 .controls #buttons {
