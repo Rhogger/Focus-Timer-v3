@@ -1,10 +1,13 @@
 import {
+  appState,
   btnPlay,
   btnPause,
   btnStop,
   btnSetTime,
   btnSoundOff,
-  btnSoundOn
+  btnSoundOn,
+  btnDarkTheme,
+  btnLightTheme,
 } from '../modules/elements.js'
 import { play, pause } from '../../script.js'
 
@@ -45,11 +48,20 @@ export default function Events({
   })
 
   btnSoundOff.addEventListener('click', () => {
-    sounds.toggleBetweenMuteOrUnmute()
+    appState.classList.toggle('music-on')
     sounds.backgroundSoundOn()
   })
+
   btnSoundOn.addEventListener('click', () => {
-    sounds.toggleBetweenMuteOrUnmute()
+    appState.classList.toggle('music-on')
     sounds.backgroundSoundOff()
+  })
+
+  btnDarkTheme.addEventListener('click', () => {
+    appState.classList.toggle('light')
+  })
+
+  btnLightTheme.addEventListener('click', () => {
+    appState.classList.toggle('light')
   })
 }

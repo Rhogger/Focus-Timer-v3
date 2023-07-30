@@ -54,10 +54,6 @@ button {
   font-size: 32rem;
 }
 
-.toggle-mode span {
-  display: none;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -72,6 +68,8 @@ main {
   color: var(--text-color);
   font-size: 96rem;
   font-weight: 700;
+
+  user-select: none;
 }
 
 .controls {
@@ -109,4 +107,17 @@ html:not(.light) #btn-light-theme {
 
 .secondary {
   color: var(--btn-secondary-color)
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: none;
+  appearance: none;
 }

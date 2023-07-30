@@ -21,13 +21,7 @@ export default function Sounds({ btnSoundOff, btnSoundOn }) {
     backgroundAudio.pause()
   }
 
-  function toggleBetweenMuteOrUnmute() {
-    btnSoundOff.classList.toggle('hide')
-    btnSoundOn.classList.toggle('hide')
-  }
-
   return {
-    toggleBetweenMuteOrUnmute,
     buttonPress,
     finishTimer,
     backgroundSoundOn,

@@ -1,4 +1,4 @@
-export default function Timer({ Time, minutesDisplay, secondsDisplay, toggleBetweenPlayOrPause, sounds }) {
+export default function Timer({ appState, Time, minutesDisplay, secondsDisplay, sounds }) {
   function countdown() {
     let minutes
     let seconds
@@ -25,7 +25,7 @@ export default function Timer({ Time, minutesDisplay, secondsDisplay, toggleBetw
       if (isFinished) {
         setTimeout(function () {
           resetDisplayCountdown()
-          toggleBetweenPlayOrPause()
+          appState.classList.remove('running')
         }, 1000)
 
         sounds.finishTimer()

@@ -1,3 +1,5 @@
+const appState = document.querySelector('html')
+
 const btnPlay = document.querySelector('#btn-play')
 const btnPause = document.querySelector('#btn-pause')
 const btnStop = document.querySelector('#btn-stop')
@@ -12,6 +14,7 @@ const minutesDisplay = document.querySelector('#minutes')
 const secondsDisplay = document.querySelector('#seconds')
 
 export {
+  appState,
   btnPlay,
   btnPause,
   btnStop,

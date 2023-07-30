@@ -1,8 +1,5 @@
 import {
-  btnPlay,
-  btnPause,
-  btnStop,
-  btnSetTime,
+  appState,
   btnSoundOff,
   btnSoundOn,
   minutesDisplay,
@@ -10,7 +7,6 @@ import {
 } from './src/modules/elements.js'
 import Events from './src/factories/events.js'
 import Sounds from './src/factories/sounds.js'
-import Controls from './src/factories/controls.js'
 import Timer from './src/factories/timer.js'
 
 const Time = {
@@ -24,18 +20,11 @@ const sounds = Sounds({
   btnSoundOn
 })
 
-const controls = Controls({
-  btnPlay,
-  btnPause,
-  btnStop,
-  btnSetTime
-})
-
 const timer = Timer({
+  appState,
   Time,
   minutesDisplay,
   secondsDisplay,
-  toggleBetweenPlayOrPause: controls.toggleBetweenPlayOrPause,
   sounds
 })
 
@@ -46,11 +35,11 @@ Events({
 })
 
 export function play() {
-  controls.toggleBetweenPlayOrPause()
+  appState.classList.add('running')
   timer.countdown()
 }
 
 export function pause() {
-  controls.toggleBetweenPlayOrPause()
+  appState.classList.remove('running')
   clearTimeout(Time.idCountdown)
 }
