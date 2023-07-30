@@ -1,17 +1,14 @@
 import {
   appState,
-  controls,
-  theme,
   minutesDisplay,
   secondsDisplay
 } from './src/modules/elements.js'
 import state from './src/modules/state.js'
-import Events from './src/factories/events.js'
+import * as events from './src/modules/events.js'
 import Sounds from './src/factories/sounds.js'
 import Timer from './src/factories/timer.js'
-import Actions from './src/modules/actions.js'
 
-let darkMode = true
+export let darkMode = true
 
 export const time = {
   minutes: 25,
@@ -22,25 +19,22 @@ export const time = {
 export const sounds = Sounds()
 
 export const timer = Timer({
+  sounds,
   appState,
   time,
   minutesDisplay,
   secondsDisplay,
-  sounds
-})
-
-const actions = Actions({
-  state,
   sounds,
-  timer,
-  time,
-  appState,
-  darkMode
+  state,
 })
 
-Events({
-  controls,
-  actions,
-  theme
-})
+export function start(minutes, seconds) {
+  time.minutes = minutes
+  time.seconds = seconds
 
+  timer.updateDisplay()
+
+  events.registerControls()
+}
+
+start(25, 0)
