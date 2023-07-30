@@ -28,7 +28,7 @@ export function registerControls() {
     minutesDisplay.textContent = ''
   })
 
-  minutesDisplay.onkeypress = (event) => /\d/.test(event.key)
+  minutesDisplay.onkeypress = (event) => /\d/.test(event.key) && minutesDisplay.textContent.length < 2
 
   minutesDisplay.addEventListener('blur', (event) => {
     let hour = event.currentTarget.textContent
