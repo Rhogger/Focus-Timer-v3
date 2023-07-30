@@ -34,7 +34,8 @@ tempo do contador.
 
 Adquiri conhecimentos de padrão de design Factory, modularização, estruturação de dados, manipulação
 de eventos e audios, técnicas da prática de código limpo, aprimorando os conhecimentos do ES6,
-manipulação de estados da aplicação somente com HTML e CSS, e o JavaScript para alternar os estados.
+refatoração, um pouco de regex, dataset e manipulação de estados da aplicação somente com HTML e
+CSS, e o JavaScript para alternar os estados.
 
 <br>
 <br>
