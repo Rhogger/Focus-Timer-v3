@@ -106,6 +106,13 @@ html:not(.light) #btn-light-theme {
 }
 
 
+/* Animações */
+body {
+  transition: background-color .6s ease;
+}
+
+
+
 /* Classes utilitárias */
 
 .secondary {
